@@ -13,7 +13,8 @@ def main():
 
 	header = compressed_data[:4]
 
-	if header != 'XALZ':
+	if (header.decode('utf-8') != 'XALZ'):
+		print(header)
 		sys.exit("[!] Wrong header, aborting...!")
 
 	packed_payload_len = compressed_data[8:12]
